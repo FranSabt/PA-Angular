@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task, Levels } from 'src/app/models/interfaces/Task.interface';
 
 @Component({
@@ -8,8 +8,9 @@ import { Task, Levels } from 'src/app/models/interfaces/Task.interface';
 })
 export class TaskComponent {
   @Input() task: Task | undefined;
+  @Output() killTask: EventEmitter<Task> = new EventEmitter<Task>();
 
   deleteTask(){
-    console.log("Eliminar tarea ", this.task?.title);
+    this.killTask.emit(this.task); //Notificamos al componente superior el componente a eliminar
   }
 }

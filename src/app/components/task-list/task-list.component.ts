@@ -29,4 +29,9 @@ export class TaskListComponent {
     level: Levels.urgent
   }
 
+  deleteTask(task: Task){
+    //Todo: Sustituir por un slpice para eliminar de lista de tareas
+    alert(`Se procede a elminar tarea: ${task.title}`);
+  }
+
 }

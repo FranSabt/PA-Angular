@@ -1,0 +1,6 @@
+<!-- TODO: reformular con directivas estructurales y estilos condicionales -->
+<h5>Titulo: {{task?.title}}</h5>
+<h6>Descripcion: {{task?.description}}</h6>
+<p>Level: {{task?.level === 0 ? "Info" : task?.level === 1 ? "Urgente" : "Te bloqueo" }}</p>
+<p>Completeda: {{task?.completed ? "Completada" : "Pendiente"}}</p>
+<button (click)="deleteTask()">X</button>
